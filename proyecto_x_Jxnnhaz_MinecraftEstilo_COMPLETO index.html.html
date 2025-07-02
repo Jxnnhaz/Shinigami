@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comandos Aternos - Jxnnhaz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1d1d1d;
+            font-family: 'Press Start 2P', monospace;
+            color: #00ff00;
+            background-image: url('https://i.imgur.com/oR2uVnK.png');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            border-bottom: 4px solid #00ff00;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav button {
+            background-color: #3f3f3f;
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 12px;
+            font-family: 'Press Start 2P', monospace;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        nav button:hover {
+            background-color: #00ff00;
+            color: #000;
+        }
+        .container {
+            padding: 20px;
+            background-color: rgba(0,0,0,0.7);
+            max-width: 900px;
+            margin: auto;
+            border-radius: 8px;
+        }
+        .section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+        }
+        .section.active {
+            display: block;
+            opacity: 1;
+        }
+        h2 {
+            color: #00ffcc;
+        }
+        #consola {
+            background: black;
+            color: #00ff00;
+            font-family: monospace;
+            padding: 15px;
+            border: 1px solid #00ff00;
+            margin: 10px 0;
+        }
+    </style>
+    <script>
+        function showSection(id) {
+            let sections = document.querySelectorAll('.section');
+            sections.forEach(s => s.classList.remove('active'));
+            let selected = document.getElementById(id);
+            if (selected) selected.classList.add('active');
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            showSection('basicos');
+        });
+    </script>
+</head>
+<body>
+    <header>Comandos para Aternos - Asistente <span style="color:#00ffff">Jxnnhaz</span></header>
+    <nav>
+        <button onclick="showSection('basicos')">Básicos</button>
+        <button onclick="showSection('admin')">Administración</button>
+        <button onclick="showSection('clima')">Clima y Tiempo</button>
+        <button onclick="showSection('efectos')">Efectos</button>
+        <button onclick="showSection('trolleo')">Trolleo</button>
+        <button onclick="showSection('avanzados')">Avanzados</button>
+        <button onclick="showSection('proyectox')">Proyecto X</button>
+    </nav>
+    <div class="container">
+        <div id="consola">
+            > ¡Hola! Soy <strong>Jxnnhaz</strong>. Estoy aquí para ayudarte con comandos en Aternos.
+        </div>
+        <div id="basicos" class="section">
+            <h2>Comandos Básicos</h2>
+            
+    <pre>/gamemode creative @p</pre>
+    <pre>/tp @p 100 64 100</pre>
+    <pre>/give @p minecraft:diamond_sword</pre>
+    <pre>/setworldspawn</pre>
+    
+        </div>
+        <div id="admin" class="section">
+            <h2>Comandos de Administración</h2>
+            
+    <pre>/op TuNombre</pre>
+    <pre>/ban JugadorTroll</pre>
+    <pre>/whitelist on</pre>
+    <pre>/kick JugadorAfk Te fuiste AFK :(</pre>
+    
+        </div>
+        <div id="clima" class="section">
+            <h2>Clima y Tiempo</h2>
+            
+    <pre>/weather thunder</pre>
+    <pre>/time set night</pre>
+    <pre>/gamerule doDaylightCycle false</pre>
+    
+        </div>
+        <div id="efectos" class="section">
+            <h2>Comandos de Efectos</h2>
+            
+    <pre>/effect give @p minecraft:levitation 5 1</pre>
+    <pre>/effect give @p blindness 10</pre>
+    <pre>/title @a title {"text":"¡CUIDADO!", "color":"red"}</pre>
+    <pre>/playsound minecraft:entity.lightning_bolt.thunder master @a</pre>
+    
+        </div>
+        <div id="trolleo" class="section">
+            <h2>Comandos para Trollear</h2>
+            
+    <pre>/summon zombie ~ ~ ~ {Silent:1b,CustomName:'"NULL"',NoAI:1b,Glowing:1b}</pre>
+    <pre>/title @a title {"text":"null null null", "color":"dark_red"}</pre>
+    <pre>/effect give @a slowness 5 255 true</pre>
+    <pre>/summon item ~ ~3 ~ {Item:{id:"minecraft:cod",Count:1b}}</pre>
+    
+        </div>
+        <div id="avanzados" class="section">
+            <h2>Comandos Avanzados</h2>
+            
+    <pre>/execute as @a at @s run summon lightning_bolt</pre>
+    <pre>/execute if entity @a[name=Jxnnhaz] run say Estoy observando...</pre>
+    <pre>/fill ~-5 ~ ~-5 ~5 ~ ~5 air</pre>
+    <pre>/effect give @a minecraft:resistance 1000000 255 true</pre>
+    
+        </div>
+        <div id="proyectox" class="section">
+            <h2>Proyecto X</h2>
+            
+    <pre>/title @a title {"text":"I'm here...", "color":"dark_red"}</pre>
+    <pre>/execute at @a run summon zombie ~ ~ ~ {CustomName:'"null"',Silent:1b,NoAI:1b,Glowing:1b}</pre>
+    <pre>/weather thunder</pre>
+    <pre>/effect give @a blindness 10 1 true</pre>
+    <pre>/effect give @a slowness 10 3 true</pre>
+    <pre>/title @a subtitle {"text":"There is another entity with you", "color":"red"}</pre>
+    
+        </div>
+    </div>
+</body>
+</html>
